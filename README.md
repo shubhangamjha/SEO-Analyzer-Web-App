@@ -114,6 +114,23 @@ The application provides error messages for:
 
 [MIT License](LICENSE)
 
+## Documentation
+
+### User Guide
+
+For detailed usage instructions, see the [User Guide](docs/USER_GUIDE.md).
+
+### API Documentation
+
+For API details, see the [API Documentation](docs/API.md).
+
+### System Diagrams
+
+To understand the system architecture and workflow, see the [Diagrams](docs/DIAGRAMS.md) which include:
+- Workflow Diagram - Shows data flow through the system
+- Sequence Diagram - Shows time-ordered interactions between components
+- Component Diagram - Shows structural organization of the system
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.

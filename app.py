@@ -64,11 +64,12 @@ def analyze():
         jr = resp.json()
         # Optional: print(jr) for debugging
         entities = jr.get("response", {}).get("entities", [])
-        keywords = [
-            (e["entityId"], e["confidenceScore"])
-            for e in entities
-            if e["confidenceScore"] > 0.2
-        ]
+        keywords = sorted(
+            [{"keyword": e["entityId"], "score": e["confidenceScore"]}
+             for e in entities],
+            key=lambda x: x["score"],
+            reverse=True
+        )
         # Sort & take top 10
         keywords = sorted(keywords, key=lambda x: x[1], reverse=True)[:10]
         keyword_list = [kw for kw,score in keywords]
