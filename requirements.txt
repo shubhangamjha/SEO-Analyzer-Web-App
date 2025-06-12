@@ -1,0 +1,6 @@
+Flask==2.0.1
+Flask-Cors==3.0.10
+requests==2.26.0
+textstat==0.7.3
+pytest==7.0.0
+flake8==6.0.0
