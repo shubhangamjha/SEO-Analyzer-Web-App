@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SEO Analyzer</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        textarea { width: 100%; height: 200px; margin-bottom: 10px; padding: 10px; }
+        button { padding: 10px 15px; background: #007bff; color: white; border: none; cursor: pointer; }
+        #results { margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .keyword { margin: 5px; display: inline-block; padding: 5px 10px; background: #f0f0f0; border-radius: 3px; }
+        #error { color: red; margin: 10px 0; }
+        .loader { display: none; border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 10px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <h1>SEO Text Analyzer</h1>
+
+    <form id="seo-form">
+        <textarea id="text-input" name="text" placeholder="Enter your text here..." required></textarea>
+        <button type="submit">Analyze SEO</button>
+        <div id="error"></div>
+        <div class="loader" id="loader"></div>
+    </form>
+
+    <div id="results" style="display: none;">
+        <h2>Analysis Results</h2>
+        <p>Readability Score: <span id="readability"></span> (higher is easier to read)</p>
+
+        <h3>Recommended Keywords:</h3>
+        <div id="keywords-container"></div>
+
+        <h3>Updated Text Preview:</h3>
+        <textarea id="text-preview" readonly></textarea>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
